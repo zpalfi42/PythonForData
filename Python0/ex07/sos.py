@@ -48,8 +48,9 @@ def main():
     """_summary_
     """
     try:
-        if len(sys.argv) != 2 or all(c.isalnum() or c.isspace() for c in sys.argv[1]) is False:
-            raise AssertionError("the argument are bad")
+        if len(sys.argv) != 2 or all(c.isalnum() or c.isspace()
+                                     for c in sys.argv[1]) is False:
+            raise AssertionError("the arguments are bad")
         print(' '.join(NESTED_MORSE[x] for x in sys.argv[1].upper()))
     except AssertionError as e:
         print(f"AssertionError: {e}")

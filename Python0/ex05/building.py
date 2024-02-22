@@ -5,7 +5,7 @@ import sys
 
 
 def count(text: str):
-    """_summary_
+    """Iterates the given str and prints the nmber of characters inside it.
     """
     count_dict = {"total": 0, "upper": 0, "lower": 0, "punct": 0,
                   "spaces": 0, "digits": 0}
@@ -30,7 +30,7 @@ def count(text: str):
 
 
 def main():
-    """_summary_
+    """Main function where we avoid errors and ask for input.
     """
     try:
         if len(sys.argv) > 2:
@@ -39,14 +39,20 @@ def main():
             count(sys.argv[1])
         else:
             try:
-                while True:
-                    text = input()
-                    count(text)
+                text = input()
+                count(text)
             except EOFError:
+                print()
+                sys.exit()
+            except KeyboardInterrupt:
+                print()
                 sys.exit()
     except AssertionError as e:
         print(f"AssertionError: {e}")
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except AssertionError:
+        sys.exit()
