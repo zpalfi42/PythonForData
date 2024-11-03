@@ -3,13 +3,14 @@
 
 
 def all_thing_is_obj(obj: any) -> int:  # type: ignore
-    """_summary_
+    """
+    Checks the type of the given object and prints a message based on the type.
 
     Args:
-        obj (any): _description_
+        obj (any): The object whose type is to be checked. Can be a string, list, tuple, dict, set, or any other type.
 
     Returns:
-        int: _description_
+        int: Always returns the integer 42.
     """
     if isinstance(obj, str):
         print(f"{obj} is in the kitchen : {type(obj)}")

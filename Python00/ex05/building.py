@@ -3,7 +3,6 @@
 
 import sys
 
-
 def count(text: str):
     """Iterates the given str and prints the nmber of characters inside it.
     """
@@ -39,7 +38,8 @@ def main():
             count(sys.argv[1])
         else:
             try:
-                text = input()
+                print("What is the text to count?")
+                text = sys.stdin.readline()
                 count(text)
             except EOFError:
                 print()
